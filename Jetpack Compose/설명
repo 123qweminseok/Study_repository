@@ -1,0 +1,25 @@
+📌 1. Jetpack Compose + UI Migration (우선 학습)
+
+🎯 목표: Compose로 UI를 구현하고, 기존 View 시스템과의 차이 이해
+
+안드로이드 개발 트렌드가 Jetpack Compose 중심으로 이동 중이므로 Compose 학습이 최우선!
+
+기존 XML 기반 View Binding → Compose 전환(Migration) 경험이 중요.
+
+✅ 학습 순서
+
+기본 UI 구성 (Button, Text, Image, Column, Row, LazyColumn)
+
+State Management (remember, mutableStateOf, LiveData + Compose, Flow + Compose)
+
+Navigation (Jetpack Navigation) → 여러 화면 이동 구현
+
+기존 View 기반 UI → Compose 변환 연습 (Fragment & Compose 혼합)
+
+Material 3 & Theming (Dark Mode, Dynamic Color)
+
+진행 실습 
+
+Compose로 간단한 앱 만들기 (To-Do List, 계산기, 메모장 등)
+
+기존 XML 기반 프로젝트 일부를 Compose로 변환하여 실습.
