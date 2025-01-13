@@ -1,5 +1,6 @@
 package com.minseok.compose_study
-
+import androidx.compose.ui.platform.LocalContext
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -17,6 +18,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.platform.LocalContext
+
+
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +36,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BasicComponents() {
     var text by remember { mutableStateOf("Hello, Jetpack Compose!") }
+
+    val context = LocalContext.current  // 여기에 LocalContext.current 추가
 
     Column(
         modifier = Modifier
@@ -51,11 +58,14 @@ fun BasicComponents() {
         Spacer(modifier = Modifier.height(8.dp))
 
         Button(
-            onClick = { text = "Button Clicked!" },
+            onClick = {
+                context.startActivity(Intent(context, ResponsiveActivity::class.java))
+            },
             shape = RoundedCornerShape(8.dp)
         ) {
             Text("Click Me")
-        } // 버튼
+        }
+
 
         Spacer(modifier = Modifier.height(8.dp))
 
@@ -122,6 +132,7 @@ fun RowAndBoxLayout() {
 }
 
 // ✅ 4. 최상위 Composable 함수
+@Preview
 @Composable
 fun MyApp() {
     MaterialTheme {
